@@ -21,7 +21,7 @@ const renderer = new WebGLRenderer({
   alpha: true,
 });
 renderer.setClearColor(new Color(), 0);
-renderer.setSize(1024, 1024);
+renderer.setSize(640, 480);
 renderer.domElement.style.position = "absolute";
 renderer.domElement.style.top = "0px";
 renderer.domElement.style.left = "0px";
