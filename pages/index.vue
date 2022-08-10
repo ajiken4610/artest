@@ -75,7 +75,7 @@ const arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, marker, {
 });
 
 const mesh = new Mesh(new BoxGeometry(), new MeshNormalMaterial());
-mesh.position.y = 1.0;
+mesh.position.y = 0.5;
 marker.add(mesh);
 
 requestAnimationFrame(function animate() {
