@@ -48,6 +48,9 @@ addEventListener("resize", () => {
 
 const arToolkitContext = new THREEx.ArToolkitContext({
   cameraParametersUrl: "data/camera_para.dat",
+  patternRatio: 0.5,
+  detectionMode: "color_and_matrix",
+  matrixCodeType: "4x4_BCH_13_9_3",
 });
 
 arToolkitContext.init(() => {
