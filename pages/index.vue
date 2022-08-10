@@ -13,6 +13,7 @@ import {
   CylinderBufferGeometry,
   Clock,
   Group,
+  BoxGeometry,
 } from "three";
 import * as THREEx from "@ar-js-org/ar.js/three.js/build/ar-threex";
 
@@ -73,20 +74,16 @@ const arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, marker, {
   changeMatrixMode: "modelViewMatrix",
 });
 
-const mesh = new Mesh(new CylinderBufferGeometry(), new MeshNormalMaterial());
+const mesh = new Mesh(new BoxGeometry(), new MeshNormalMaterial());
 mesh.position.y = 1.0;
 marker.add(mesh);
 
-const clock = new Clock();
 requestAnimationFrame(function animate() {
   requestAnimationFrame(animate);
   if (arToolkitSource.ready) {
     arToolkitContext.update(arToolkitSource.domElement);
     scene.visible = camera.visible;
   }
-  const delta = clock.getDelta();
-  mesh.rotation.x += delta * 1.0;
-  mesh.rotation.y += delta * 1.5;
   renderer.render(scene, camera);
 });
 </script>
