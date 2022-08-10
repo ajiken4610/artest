@@ -1,6 +1,5 @@
 <template lang="pug">
 div
-  canvas
 </template>
 
 <script setup lang="ts">
@@ -16,13 +15,13 @@ import {
   Group,
 } from "three";
 import * as THREEx from "@ar-js-org/ar.js/three.js/build/ar-threex";
-console.log(THREEx);
+
 const renderer = new WebGLRenderer({
   antialias: true,
   alpha: true,
 });
 renderer.setClearColor(new Color(), 0);
-renderer.setSize(640, 480);
+renderer.setSize(100, 100);
 renderer.domElement.style.position = "absolute";
 renderer.domElement.style.top = "0px";
 renderer.domElement.style.left = "0px";
@@ -69,6 +68,7 @@ const arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, marker, {
   type: "pattern",
   patternUrl: "data/pattern-qr-code.patt",
   changeMatrixMode: "modelViewMatrix",
+  minConfidence: 0.0001,
 });
 
 const mesh = new Mesh(new CylinderBufferGeometry(), new MeshNormalMaterial());
