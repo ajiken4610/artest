@@ -67,7 +67,7 @@ const marker = new Group();
 scene.add(marker);
 const arMarkerControls = new THREEx.ArMarkerControls(arToolkitContext, marker, {
   type: "pattern",
-  patternUrl: "data/pattern-23.patt",
+  patternUrl: "data/pattern-qr-code.patt",
   changeMatrixMode: "modelViewMatrix",
 });
 
